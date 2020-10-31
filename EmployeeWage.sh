@@ -2,6 +2,7 @@ echo "Employee Wage Compuation Problem"
 isPresent=1
 wageRate=20
 dayHr=8
+partTimeHr=$(($RANDOM%8+1))
 randomCheck=$(( RANDOM%2 ))
 if [[ $isPresent -eq $randomCheck ]]
 then
@@ -11,3 +12,5 @@ else
 fi
 dailyWage=$(( $wageRate * $dayHr ))
 echo "Daily employee wage = $dailyWage"
+partTimeWage=$(( $wageRate * $partTimeHr ))
+echo "For $partTimeHr part time hours wages are: $partTimeWage"
