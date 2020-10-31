@@ -4,13 +4,25 @@ wageRate=20
 dayHr=8
 partTimeHr=$(($RANDOM%8+1))
 randomCheck=$(( RANDOM%2 ))
-if [[ $isPresent -eq $randomCheck ]]
-then
-    echo "Employee is present"
-else
-     echo "Employee is not present"
-fi
-dailyWage=$(( $wageRate * $dayHr ))
-echo "Daily employee wage = $dailyWage"
-partTimeWage=$(( $wageRate * $partTimeHr ))
-echo "For $partTimeHr part time hours wages are: $partTimeWage"
+echo "1.Employee Attendance 2.Daily Wage 3.Part Time Wage"
+read input
+case $input in
+	1)
+		randomCheck=$(( RANDOM%2 ))
+		if [[ $isPresent -eq $randomCheck ]]
+		then
+    			echo "Employee is present"
+		else
+     			echo "Employee is not present"
+		fi
+	;;
+	2)
+		dailyWage=$(( $wageRate * $dayHr ))
+		echo "Daily employee wage = $dailyWage"
+	;;
+	3)
+		partTimeWage=$(( $wageRate * $partTimeHr ))
+		echo "For $partTimeHr part time hours wages are: $partTimeWage"
+	;;
+esac
+	
