@@ -36,10 +36,10 @@ do
 	        employeeCheck=$(($RANDOM%2+1))
         case $employeeCheck in
         1)
-                employeeWorkingHours=$(( $empHr + 8 ))
+                employeeWorkingHours=$(( $employeeWorkingHours + 8 ))
         ;;
 	2)
-                employeeWorkingHours=$(( $empHr + 4 ))
+                employeeWorkingHours=$(( $employeeWorkingHours + 4 ))
         ;;
         esac
 	salary=$(( $employeeWorkingHours * $wageRate ))
@@ -47,3 +47,22 @@ do
 	echo "$salary "
 
 done
+getWorkHrs()
+{
+
+
+	while [[ $days -lt 20  &&  $employeeWorkingHours -lt 100 ]]
+	do
+		empcheck=$(($RANDOM%2+1))
+		case $empcheck in
+		1)
+			employeeWorkingHours=$(( $employeeWorkingHours + 8 ))
+			;;
+		2)
+			employeeWorkingHours=$(( $employeeWorkingHours + 4 ))
+			;;
+		esac
+	done
+}
+getWorkHrs
+echo "Total Working Hours are $employeeWorkingHours"
