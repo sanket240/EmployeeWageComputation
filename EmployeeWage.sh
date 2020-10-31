@@ -3,7 +3,7 @@ isPresent=1
 wageRate=20
 dayHr=8
 partTimeHr=$(($RANDOM%8+1))
-randomCheck=$(( RANDOM%2 ))
+workingDaysPerMonth=20
 echo "1.Employee Attendance 2.Daily Wage 3.Part Time Wage"
 read input
 case $input in
@@ -25,4 +25,6 @@ case $input in
 		echo "For $partTimeHr part time hours wages are: $partTimeWage"
 	;;
 esac
-	
+dailyWage=$(( $wageRate * $dayHr ))
+monthlyWage=$(( $dailyWage * $workingDaysPerMonth ))
+echo "Monthly Wage=$monthlyWage"
