@@ -30,7 +30,7 @@ esac
 dailyWage=$(( $wageRate * $dayHr ))
 monthlyWage=$(( $dailyWage * $workingDaysPerMonth ))
 echo "Monthly Wage=$monthlyWage"
-echo "Wages " 
+echo "Wages 		Total Wages" 
 while [[ $days -lt 20 && $employeeWorkingHours ]]
 do
 	        employeeCheck=$(($RANDOM%2+1))
@@ -43,8 +43,9 @@ do
         ;;
         esac
 	salary=$(( $employeeWorkingHours * $wageRate ))
+	totalSalary=$(( $totalSalary + $salary ))
 	((days++))
-	echo "$salary "
+	echo "$salary		$totalSalary "
 
 done
 getWorkHrs()
